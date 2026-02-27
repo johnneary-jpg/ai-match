@@ -498,7 +498,9 @@ function draw() {
 
 // ── Mouse interaction ─────────────────────────────────────────────────────────
 canvas.addEventListener('mousemove', e => {
-  const mx = e.clientX, my = e.clientY;
+  const rect = canvas.getBoundingClientRect();
+  const mx = e.clientX - rect.left;
+  const my = e.clientY - rect.top;
   let closest = null, closestDist = 20;
   nodes.forEach(n => {
     if (n.alpha < 0.5) return;
@@ -512,8 +514,8 @@ canvas.addEventListener('mousemove', e => {
     document.getElementById('tt-layer').textContent = closest.layer;
     document.getElementById('tt-name').textContent = closest.name;
     tt.style.opacity = '1';
-    tt.style.left = (mx + 16) + 'px';
-    tt.style.top = (my - 10) + 'px';
+    tt.style.left = (e.clientX + 16) + 'px';
+    tt.style.top = (e.clientY - 10) + 'px';
   } else {
     tt.style.opacity = '0';
   }
