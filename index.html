@@ -176,18 +176,12 @@
   </div>
 </div>
 
-<div id="counter">
-  <div>Match Patterns <span id="cnt-patterns">0</span></div>
-  <div>Suppliers <span id="cnt-suppliers">0</span></div>
-  <div>Organisations <span id="cnt-orgs">0</span></div>
-  <div>Customers <span id="cnt-customers">0</span></div>
-</div>
+
 
 <div id="legend">
   <div class="legend-item"><div class="legend-dot" style="background:#ffffff;box-shadow:0 0 6px rgba(255,255,255,0.6)"></div>Match Pattern</div>
   <div class="legend-item"><div class="legend-dot" style="background:#047fe4;box-shadow:0 0 6px rgba(4,127,228,0.7)"></div>Supplier</div>
   <div class="legend-item"><div class="legend-dot" style="background:#f6921e;box-shadow:0 0 6px rgba(246,146,30,0.7)"></div>Organisation</div>
-  <div class="legend-item"><div class="legend-dot" style="background:#92c5fe;box-shadow:0 0 6px rgba(146,197,254,0.7)"></div>Customer</div>
 </div>
 
 <div id="tooltip">
@@ -370,10 +364,6 @@ resize();
 window.addEventListener('resize', resize);
 
 // ── Counters ──────────────────────────────────────────────────────────────────
-document.getElementById('cnt-patterns').textContent = PATTERNS.length;
-document.getElementById('cnt-suppliers').textContent = nodes.filter(n=>n.layer==='Supplier').length;
-document.getElementById('cnt-orgs').textContent = nodes.filter(n=>n.layer==='Organisation').length;
-document.getElementById('cnt-customers').textContent = CUSTOMERS.length;
 
 // ── Animation state ───────────────────────────────────────────────────────────
 let t = 0;
